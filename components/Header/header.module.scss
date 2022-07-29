@@ -1,0 +1,7 @@
+.container {
+  @apply bg-primary flex;
+
+  .title__container {
+    @apply  text-white;
+  }
+}
