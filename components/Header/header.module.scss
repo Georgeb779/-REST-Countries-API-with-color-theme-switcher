@@ -1,7 +1,7 @@
 .container {
-  @apply bg-primary flex;
+  @apply bg-primary flex justify-between h-20 items-center p-4 shadow-xl;
 
   .title__container {
-    @apply  text-white;
+    @apply text-white font-bold;
   }
 }

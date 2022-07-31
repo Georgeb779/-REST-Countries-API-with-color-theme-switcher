@@ -1,4 +1,6 @@
 import styles from "./header.module.scss";
+import Moon from "../../assets/moon-icon.svg";
+import Button from "../Button";
 
 export default function Header() {
   return (
@@ -6,14 +8,12 @@ export default function Header() {
       <div className={styles.title__container}>
         <h1>Where in the world?</h1>
       </div>
-      <button
-        className="btn btn-primary"
-        onClick={() => {
-          alert("Hello World");
-        }}
-      >
-        Dark Mode
-      </button>
+      <Button
+        text="Dark Mode"
+        onClick={() => console.log("Potasio")}
+        icon={<Moon />}
+        type="primary"
+      />
     </header>
   );
 }
