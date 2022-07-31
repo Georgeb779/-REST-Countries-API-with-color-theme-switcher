@@ -1,0 +1,7 @@
+.primary {
+  @apply flex bg-primary text-white items-center gap-2;
+
+  svg {
+    @apply w-5 h-5 fill-white;
+  }
+}
