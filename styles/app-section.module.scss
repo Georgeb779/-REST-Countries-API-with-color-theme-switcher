@@ -1,0 +1,8 @@
+.container {
+  @apply flex flex-col h-screen;
+}
+
+.loading {
+  @apply grid h-full;
+  align-items: start;
+}

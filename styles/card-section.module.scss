@@ -1,3 +1,11 @@
+.main {
+  @apply flex flex-col items-center justify-center my-12 mx-auto;
+  max-width: 1400px;
+}
+
 .container {
-  @apply flex items-center justify-between flex-wrap h-screen;
+  @apply h-auto grid justify-items-center justify-center  w-full gap-8;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 260px));
+  height: 100%;
+  width: 100%;
 }

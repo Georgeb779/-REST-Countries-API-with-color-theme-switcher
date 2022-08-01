@@ -1,0 +1,36 @@
+import React from "react";
+import styles from "./country-card.module.scss";
+
+export default function CountryCard({
+  name,
+  population,
+  region,
+  capital,
+  flag,
+}: {
+  name: string;
+  population: string;
+  region: string;
+  capital: string;
+  flag: string;
+}) {
+  return (
+    <div className={styles.container}>
+      <div
+        className={styles.header}
+        style={{
+          backgroundImage: `url(${flag})`,
+        }}
+      ></div>
+
+      <div className={styles.body}>
+        <h1>{name}</h1>
+        <ul>
+          <li>Population: {population}</li>
+          <li>Region: {region}</li>
+          <li>Capital: {capital}</li>
+        </ul>
+      </div>
+    </div>
+  );
+}
