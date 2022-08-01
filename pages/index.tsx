@@ -1,8 +1,19 @@
 import Head from "next/head";
 
 import Header from "../components/Header";
+import SearchBar from "../components/SearchBar";
+
+import SearchIcon from "../assets/search.svg";
+
+import { darkMode } from "../utils/darkMode";
+import { useEffect } from "react";
 
 export default function Home() {
+  
+  useEffect(() => {
+    darkMode();
+  }, []);
+
   return (
     <>
       <Head>
@@ -13,7 +24,9 @@ export default function Home() {
 
       <Header />
 
-      <main></main>
+      <main>
+        <SearchBar placeholder="Search for a country" icon={<SearchIcon />} />
+      </main>
 
       <footer>
         <a

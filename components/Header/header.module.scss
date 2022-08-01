@@ -1,7 +1,15 @@
 .container {
-  @apply bg-primary flex justify-between h-20 items-center p-4 shadow-xl;
+  @apply flex justify-between h-20 items-center p-4 shadow-sm;
 
   .title__container {
-    @apply text-white font-bold;
+    @apply text-black font-bold;
+  }
+}
+
+:global(.dark) .container {
+  @apply bg-primary;
+
+  .title__container {
+    @apply text-white;
   }
 }
