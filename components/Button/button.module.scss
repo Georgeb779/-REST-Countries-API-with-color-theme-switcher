@@ -1,5 +1,5 @@
 .primary {
-  @apply flex bg-white text-primary gap-2;
+  @apply flex bg-transparent text-primary gap-2;
 
   svg {
     @apply w-5 h-5;
@@ -7,7 +7,7 @@
 }
 
 :global(.dark) .primary {
-  @apply bg-primary  text-white items-center;
+  @apply bg-transparent  text-white items-center;
 
   svg {
     @apply fill-white;

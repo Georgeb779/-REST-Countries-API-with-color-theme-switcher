@@ -1,19 +1,18 @@
 import Head from "next/head";
 
-import Header from "../components/Header";
-import SearchBar from "../components/SearchBar";
+import { useEffect } from "react";
+
+import { switchMode } from "../utils/switchMode";
 
 import SearchIcon from "../assets/search.svg";
 
-import { darkMode } from "../utils/darkMode";
-import { useEffect } from "react";
+import Header from "../components/Header";
+import SearchBar from "../components/SearchBar";
+import Filter from "../components/Filter";
+import stylesFilter from "../styles/filter-section.module.scss";
+import stylesCard from "../styles/card-section.module.scss";
 
 export default function Home() {
-  
-  useEffect(() => {
-    darkMode();
-  }, []);
-
   return (
     <>
       <Head>
@@ -25,7 +24,18 @@ export default function Home() {
       <Header />
 
       <main>
-        <SearchBar placeholder="Search for a country" icon={<SearchIcon />} />
+        <div className={stylesFilter.container}>
+          <SearchBar
+            placeholder="Search for a country..."
+            icon={<SearchIcon />}
+          />
+          <Filter
+            type={"region"}
+            value={["Africa", "America", "Asia", "Europe", "Oceania"]}
+          />
+        </div>
+        {/* card container */}
+        <div className={stylesCard.container}></div>
       </main>
 
       <footer>

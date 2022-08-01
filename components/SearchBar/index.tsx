@@ -12,7 +12,6 @@ export default function SearchBar({
   icon?: React.ReactNode;
   onChange?: (e: React.ChangeEvent<HTMLInputElement>) => void;
 }) {
-  console.log(styles);
   return (
     <div className={styles.container}>
       {icon && <button type="submit">{icon}</button>}
