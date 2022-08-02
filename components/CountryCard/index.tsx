@@ -1,4 +1,6 @@
 import React from "react";
+import Link from "next/link";
+
 import styles from "./country-card.module.scss";
 
 export default function CountryCard({
@@ -15,22 +17,24 @@ export default function CountryCard({
   flag: string;
 }) {
   return (
-    <div className={styles.container}>
-      <div
-        className={styles.header}
-        style={{
-          backgroundImage: `url(${flag})`,
-        }}
-      ></div>
+    <Link href={`/country/${name}`}>
+      <div className={styles.container}>
+        <div
+          className={styles.header}
+          style={{
+            backgroundImage: `url(${flag})`,
+          }}
+        ></div>
 
-      <div className={styles.body}>
-        <h1>{name}</h1>
-        <ul>
-          <li>Population: {population}</li>
-          <li>Region: {region}</li>
-          <li>Capital: {capital}</li>
-        </ul>
+        <div className={styles.body}>
+          <h1>{name}</h1>
+          <ul>
+            <li>Population: {population}</li>
+            <li>Region: {region}</li>
+            <li>Capital: {capital}</li>
+          </ul>
+        </div>
       </div>
-    </div>
+    </Link>
   );
 }
