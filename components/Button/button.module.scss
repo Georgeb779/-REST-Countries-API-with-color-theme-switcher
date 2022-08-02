@@ -5,11 +5,23 @@
     @apply w-5 h-5;
   }
 }
+.secondary {
+  @apply flex justify-center bg-transparent text-primary gap-2 p-1 w-20 shadow-lg;
 
-:global(.dark) .primary {
+  svg {
+    @apply w-5 h-5;
+  }
+}
+
+:global(.dark) .primary,
+:global(.dark) .secondary {
   @apply bg-transparent  text-white items-center;
 
   svg {
     @apply fill-white;
   }
+}
+
+:global(.dark) .secondary {
+  @apply bg-primary shadow-xl;
 }

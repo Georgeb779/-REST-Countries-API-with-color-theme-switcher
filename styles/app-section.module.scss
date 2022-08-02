@@ -6,3 +6,10 @@
   @apply grid h-full;
   align-items: start;
 }
+
+.loaded {
+  @apply bg-white;
+}
+:global(.dark) .loaded {
+  @apply bg-primaryDark;
+}

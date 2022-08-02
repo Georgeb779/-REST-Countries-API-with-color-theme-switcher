@@ -40,7 +40,7 @@ export default function Home() {
 
       <Header />
 
-      <main className={loading ? styleApp.loading : " "}>
+      <main className={loading ? styleApp.loading : styleApp.loaded}>
         <div className={stylesFilter.container}>
           <SearchBar
             placeholder="Search for a country..."
@@ -54,20 +54,21 @@ export default function Home() {
         {/* card container */}
         <div className={stylesCard.main}>
           <div className={stylesCard.container}>
-            <Suspense fallback={<Loading />}>
-              {!loading &&
-                countries &&
-                countries.map((country) => (
-                  <CountryCard
-                    key={country.name.common}
-                    name={country.name.common}
-                    population={numberWithCommas(country.population)}
-                    region={""}
-                    capital={""}
-                    flag={country.flags[0]}
-                  />
-                ))}
-            </Suspense>
+            {loading ? (
+              <Loading />
+            ) : (
+              countries &&
+              countries.map((country) => (
+                <CountryCard
+                  key={country.name.common}
+                  name={country.name.common}
+                  population={numberWithCommas(country.population)}
+                  region={""}
+                  capital={""}
+                  flag={country.flags[0]}
+                />
+              ))
+            )}
           </div>
         </div>
       </main>

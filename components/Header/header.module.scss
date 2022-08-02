@@ -1,5 +1,5 @@
 .container {
-  @apply  transition-all flex justify-between h-20 items-center p-4 shadow-sm;
+  @apply transition-all flex justify-between h-20 md:p-8 mb-5 items-center p-4 shadow-sm;
 
   .title__container {
     @apply text-black font-bold;
