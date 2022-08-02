@@ -1,0 +1,30 @@
+.container {
+  @apply text-white bg-primaryDark h-full  w-[360px];
+  margin: 0px auto;
+
+  span {
+    @apply mr-[6px] font-semibold;
+  }
+}
+
+.first_block,
+.second_block {
+  p,
+  ul {
+    @apply flex mr-[6px];
+  }
+}
+
+.first_block,
+.second_block,
+.third_block {
+  @apply h-full p-[14px] bg-primaryDark;
+}
+
+.flag {
+  @apply h-56 bg-no-repeat bg-center bg-cover mt-[35px] mb-[40px];
+}
+
+.boundary_container {
+  @apply flex gap-2 mt-6;
+}
