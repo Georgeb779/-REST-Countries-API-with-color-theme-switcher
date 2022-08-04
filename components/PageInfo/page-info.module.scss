@@ -1,9 +1,11 @@
 .container {
-  @apply text-white bg-primaryDark h-full  w-[360px];
-  margin: 0px auto;
+  @apply text-primary bg-white h-full;
 
   span {
     @apply mr-[6px] font-semibold;
+  }
+  h1 {
+    @apply text-xl whitespace-pre-line font-bold mb-4 break-words;
   }
 }
 
@@ -11,14 +13,14 @@
 .second_block {
   p,
   ul {
-    @apply flex mr-[6px];
+    @apply flex mr-[6px] mb-[10px];
   }
 }
 
 .first_block,
 .second_block,
 .third_block {
-  @apply h-full p-[14px] bg-primaryDark;
+  @apply h-full p-[14px] bg-white;
 }
 
 .flag {
@@ -26,5 +28,20 @@
 }
 
 .boundary_container {
-  @apply flex gap-2 mt-6;
+  @apply grid gap-2 mt-6;
+  grid-template-columns: repeat(2, minmax(152px, 100%));
+  a {
+    @apply grid w-full;
+  }
+}
+
+:global(.dark) .container {
+  @apply text-white bg-primaryDark;
+}
+
+:global(.dark) .first_block,
+:global(.dark) .first_block,
+:global(.dark) .second_block,
+:global(.dark) .third_block {
+  @apply bg-primaryDark;
 }

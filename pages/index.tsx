@@ -24,6 +24,7 @@ export default function Home() {
   useEffect(() => {
     const country = new GetCountries();
     country.getCountries().then((res) => {
+      console.log(res)
       SetCountries(res);
       setLoading(false);
     });
@@ -63,8 +64,8 @@ export default function Home() {
                   key={country.name.common}
                   name={country.name.common}
                   population={numberWithCommas(country.population)}
-                  region={""}
-                  capital={""}
+                  region={country.region}
+                  capital={country.capital}
                   flag={country.flags[0]}
                 />
               ))

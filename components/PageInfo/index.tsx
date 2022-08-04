@@ -1,8 +1,10 @@
 import Link from "next/link";
-import React from "react";
+import React, { useEffect, useState } from "react";
+import { GetCountries } from "../../services/getCountries";
 import { numberWithCommas } from "../../utils/numberWithCommas";
 import Button from "../Button";
 import style from "./page-info.module.scss";
+import Back from "../../assets/back.svg";
 
 export default function PageInfo({
   name,
@@ -29,21 +31,31 @@ export default function PageInfo({
   languages: string[];
   borderCountries: string[];
 }) {
-  console.log(languages);
+  const getBorderNAme = new GetCountries();
+
+  const [borderCountryName, setBorderCountryName] = useState([]);
+
+  useEffect(() => {
+    getBorderNAme.getCountriesByCode(borderCountries).then((data) => {
+      setBorderCountryName(data);
+    });
+  }, [name]);
 
   return (
     <div className={style.container}>
-      <Link href="/" passHref>
-        <Button
-          text={"Back"}
-          type={"secondary"}
-          onClick={() => {
-            console.log("Back");
-          }}
-        />
-      </Link>
-
       <div className={style.first_block}>
+        <Link href="/" passHref>
+          <a>
+            <Button
+              text={"Back"}
+              type={"secondary"}
+              icon={<Back />}
+              onClick={() => {
+                console.log("Back");
+              }}
+            />
+          </a>
+        </Link>
         <div
           style={{ backgroundImage: `url(${flag})` }}
           className={style.flag}
@@ -76,27 +88,28 @@ export default function PageInfo({
           <span>Top Level Domain: </span>
           {topLevelDomain}
         </p>
-        <p>
-          <span>Currencies: </span>
+        <span>
           <ul>
+            <span>Currencies: </span>
+
             {currencies &&
               currencies.map((currency, index) => (
                 <>
                   {currencies.length >= 0 && index < currencies.length - 1 ? (
                     <>
-                      <li key={Math.floor(Math.random() * 100)}>
+                      <li key={Math.floor(Math.random() * 1000 * index)}>
                         {currency.name},
                       </li>
                     </>
                   ) : (
-                    <li key={Math.floor(Math.random() * 100)}>
+                    <li key={Math.floor(Math.random() * 1000 * index)}>
                       {currency.name}
                     </li>
                   )}
                 </>
               ))}
           </ul>
-        </p>
+        </span>
         <ul>
           <span>Languages: </span>
           {languages &&
@@ -104,27 +117,37 @@ export default function PageInfo({
               <>
                 {languages.length > 0 && index < languages.length - 1 ? (
                   <>
-                    <li key={Math.floor(Math.random() * 100)}>{language},</li>
+                    <li key={Math.floor(Math.random() * 1000 * index)}>
+                      {language},
+                    </li>
                   </>
                 ) : (
-                  <li key={Math.floor(Math.random() * 100)}>{language}</li>
+                  <li key={Math.floor(Math.random() * 1000 * index)}>
+                    {language}
+                  </li>
                 )}
               </>
             ))}
         </ul>
       </div>
       <div className={style.third_block}>
-        <span>Border Countries: </span>
-
+        <span>{borderCountries && " Border Countries:"} </span>
         <div className={style.boundary_container}>
-          {borderCountries &&
-            borderCountries.map((borderCountry) => (
-              <Button
-                type="secondary"
-                text={borderCountry}
-                onClick={() => console.log(borderCountry)}
-              />
-            ))}
+          <>
+            {borderCountries &&
+              borderCountryName &&
+              borderCountryName.map((borderCountry) => (
+                <Link href={`/country/${borderCountry.name.common}`}>
+                  <a>
+                    <Button
+                      type="secondary"
+                      text={borderCountry.name.common}
+                      key={borderCountry.name.common}
+                    />
+                  </a>
+                </Link>
+              ))}
+          </>
         </div>
       </div>
     </div>

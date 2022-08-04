@@ -5,4 +5,9 @@
 .container {
   @apply grid justify-items-center justify-center gap-8 h-full w-full;
   grid-template-columns: repeat(auto-fit, minmax(230px, 270px));
+
+  a {
+    @apply  w-full;
+    display: inherit;
+  }
 }

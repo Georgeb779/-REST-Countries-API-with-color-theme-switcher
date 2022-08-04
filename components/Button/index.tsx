@@ -9,7 +9,7 @@ export default function Button({
 }: {
   text: string;
   icon?: React.ReactNode;
-  onClick: () => void;
+  onClick?: () => void;
   type?: "primary" | "secondary";
 }) {
   return (
