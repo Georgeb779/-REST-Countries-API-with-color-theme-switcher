@@ -9,8 +9,22 @@ export class GetCountries {
   }
 
   async getCountriesByName(name: string | string[]) {
-    const response = await fetch(`https://restcountries.com/v3.1/name/${name}?fullText=true`),
+    const response = await fetch(
+        `https://restcountries.com/v3.1/name/${name}?fullText=true`
+      ),
       data = await response.json();
+    return data;
+  }
+
+  async getCountriesByCode(country: string[]) {
+    console.log(country);
+
+    const response =
+        country &&
+        (await fetch(
+          `https://restcountries.com/v3.1/alpha?codes=${country.join(",")}`
+        )),
+      data = country && (await response.json());
     return data;
   }
 }

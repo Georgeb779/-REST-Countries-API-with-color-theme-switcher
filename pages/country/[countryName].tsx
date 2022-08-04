@@ -1,10 +1,7 @@
-import { useRouter } from "next/router";
 import { useEffect, useState } from "react";
-import Button from "../../components/Button";
 import Header from "../../components/Header";
 import PageInfo from "../../components/PageInfo";
 import { GetCountries } from "../../services/getCountries";
-import Link from "next/link";
 
 export async function getStaticPaths() {
   const country = new GetCountries();
@@ -44,7 +41,8 @@ export default function CountryDetail({ countryName }) {
 
   useEffect(() => {
     setCountryInfo(countryName);
-  }, []);
+  }, [countryName]);
+
 
   return (
     <>
