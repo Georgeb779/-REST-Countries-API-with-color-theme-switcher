@@ -1,7 +1,12 @@
+import Link from "next/link";
 import { useEffect, useState } from "react";
+import Button from "../../components/Button";
+import Footer from "../../components/Footer";
 import Header from "../../components/Header";
 import PageInfo from "../../components/PageInfo";
 import { GetCountries } from "../../services/getCountries";
+import styles from "../../styles/info-page.module.scss";
+import Back from '../../assets/back.svg';
 
 export async function getStaticPaths() {
   const country = new GetCountries();
@@ -43,31 +48,48 @@ export default function CountryDetail({ countryName }) {
     setCountryInfo(countryName);
   }, [countryName]);
 
-
   return (
-    <>
+    <div className={styles.container}>
       <Header />
-      {countryInfo !== null && (
-        <>
-          <PageInfo
-            name={countryInfo.name.common}
-            flag={countryInfo.flags.svg}
-            nativeLanguage={
-              [Object.values(countryInfo.languages)[0]] as unknown as string
-            }
-            population={countryInfo.population}
-            region={countryInfo.region}
-            capital={countryInfo.capital[0]}
-            subRegion={countryInfo.subregion}
-            topLevelDomain={countryInfo.tld}
-            currencies={Object.values(countryInfo.currencies)}
-            languages={
-              Object.values(countryInfo.languages) as unknown as string[]
-            }
-            borderCountries={countryInfo.borders}
-          />
-        </>
-      )}
-    </>
+      <div className={styles.main_info}>
+        <div className={styles.back} >
+          <Link href="/" passHref>
+            <a>
+              <Button
+                text={"Back"}
+                type={"secondary"}
+                icon={<Back />}
+                onClick={() => {
+                  console.log("Back");
+                }}
+              />
+            </a>
+          </Link>
+        </div>
+        {countryInfo !== null && (
+          <>
+            <PageInfo
+              name={countryInfo.name.common}
+              flag={countryInfo.flags.svg}
+              nativeLanguage={
+                [Object.values(countryInfo.languages)[0]] as unknown as string
+              }
+              population={countryInfo.population}
+              region={countryInfo.region}
+              capital={countryInfo.capital[0]}
+              subRegion={countryInfo.subregion}
+              topLevelDomain={countryInfo.tld}
+              currencies={Object.values(countryInfo.currencies)}
+              languages={
+                Object.values(countryInfo.languages) as unknown as string[]
+              }
+              borderCountries={countryInfo.borders}
+            />
+          </>
+        )}
+      <Footer />
+      </div>
+
+    </div>
   );
 }

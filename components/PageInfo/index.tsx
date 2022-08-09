@@ -44,92 +44,81 @@ export default function PageInfo({
   return (
     <div className={style.container}>
       <div className={style.first_block}>
-        <Link href="/" passHref>
-          <a>
-            <Button
-              text={"Back"}
-              type={"secondary"}
-              icon={<Back />}
-              onClick={() => {
-                console.log("Back");
-              }}
-            />
-          </a>
-        </Link>
-        <div
-          style={{ backgroundImage: `url(${flag})` }}
-          className={style.flag}
-        ></div>
-
-        <h1>{name}</h1>
-        <p>
-          <span>Native Language: </span>
-          {nativeLanguage}
-        </p>
-        <p>
-          <span>Population: </span>
-          {numberWithCommas(population)}
-        </p>
-        <p>
-          <span>Region: </span>
-          {region}
-        </p>
-        <p>
-          <span>Sub Region: </span>
-          {subRegion}
-        </p>
-        <p>
-          <span>Capital: </span>
-          {capital}
-        </p>
+          <img src={flag} alt={name} />
       </div>
       <div className={style.second_block}>
-        <p>
-          <span>Top Level Domain: </span>
-          {topLevelDomain}
-        </p>
-        <span>
-          <ul>
-            <span>Currencies: </span>
+        <div className={style.second_block_section_1}>
+          <h1>{name}</h1>
+          <p>
+            <span>Native Language: </span>
+            {nativeLanguage}
+          </p>
+          <p>
+            <span>Population: </span>
+            {numberWithCommas(population)}
+          </p>
+          <p>
+            <span>Region: </span>
+            {region}
+          </p>
+          <p>
+            <span>Sub Region: </span>
+            {subRegion}
+          </p>
+          <p>
+            <span>Capital: </span>
+            {capital}
+          </p>
+        </div>
+        <div className={style.second_block_section_2}>
+          <p>
+            <span>Top Level Domain: </span>
+            {topLevelDomain}
+          </p>
+          <span>
+            <ul>
+              <span>Currencies: </span>
 
-            {currencies &&
-              currencies.map((currency, index) => (
+              {currencies &&
+                currencies.map((currency, index) => (
+                  <>
+                    {currencies.length >= 0 && index < currencies.length - 1 ? (
+                      <>
+                        <li key={Math.floor(Math.random() * 1000 * index)}>
+                          {currency.name},
+                        </li>
+                      </>
+                    ) : (
+                      <li key={Math.floor(Math.random() * 1000 * index)}>
+                        {currency.name}
+                      </li>
+                    )}
+                  </>
+                ))}
+            </ul>
+          </span>
+          <ul>
+            <span>Languages: </span>
+            {languages &&
+              languages.map((language, index) => (
                 <>
-                  {currencies.length >= 0 && index < currencies.length - 1 ? (
+                  {languages.length > 0 && index < languages.length - 1 ? (
                     <>
                       <li key={Math.floor(Math.random() * 1000 * index)}>
-                        {currency.name},
+                        {language},
                       </li>
                     </>
                   ) : (
                     <li key={Math.floor(Math.random() * 1000 * index)}>
-                      {currency.name}
+                      {language}
                     </li>
                   )}
                 </>
               ))}
           </ul>
-        </span>
-        <ul>
-          <span>Languages: </span>
-          {languages &&
-            languages.map((language, index) => (
-              <>
-                {languages.length > 0 && index < languages.length - 1 ? (
-                  <>
-                    <li key={Math.floor(Math.random() * 1000 * index)}>
-                      {language},
-                    </li>
-                  </>
-                ) : (
-                  <li key={Math.floor(Math.random() * 1000 * index)}>
-                    {language}
-                  </li>
-                )}
-              </>
-            ))}
-        </ul>
+        </div>
       </div>
+
       <div className={style.third_block}>
         <span>{borderCountries && " Border Countries:"} </span>
         <div className={style.boundary_container}>

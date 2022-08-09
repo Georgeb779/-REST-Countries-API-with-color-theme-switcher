@@ -16,6 +16,7 @@ import styleApp from "../styles/app-section.module.scss";
 import { GetCountries } from "../services/getCountries";
 import { numberWithCommas } from "../utils/numberWithCommas";
 import Loading from "../components/Loading";
+import Footer from "../components/Footer";
 
 export default function Home() {
   const [countries, SetCountries] = useState([]);
@@ -24,7 +25,6 @@ export default function Home() {
   useEffect(() => {
     const country = new GetCountries();
     country.getCountries().then((res) => {
-      console.log(res)
       SetCountries(res);
       setLoading(false);
     });
@@ -73,17 +73,7 @@ export default function Home() {
           </div>
         </div>
       </main>
-
-      <footer>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          className="flex justify-center items-center"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Hello footer
-        </a>
-      </footer>
+      <Footer />
     </div>
   );
 }

@@ -1,37 +1,59 @@
 .container {
-  @apply text-primary bg-white h-full;
+  @apply text-primary bg-white lg:grid  lg:items-start;
 
   span {
     @apply mr-[6px] font-semibold;
   }
   h1 {
-    @apply text-xl whitespace-pre-line font-bold mb-4 break-words;
+    @apply text-xl whitespace-pre-line font-bold mb-4 break-words lg:text-2xl;
   }
+}
+.back {
+  margin: 0 16px;
+  height: 5rem;
+}
+
+.first_block {
+  @apply flex  lg:col-start-1 lg:row-start-2 lg:row-end-4;
+  max-width: 500px;
+  max-height: 388px;
+  margin: 0 auto;
+}
+.second_block {
+  @apply lg:flex lg:justify-start lg:row-start-2;
+
+  // select second child div css of element .second_block
+  div:nth-child(2) {
+    @apply lg:flex lg:flex-col lg:justify-center lg:ml-5;
+  }
+}
+
+.third_block {
+  @apply lg:col-start-2 lg:row-start-3 lg:row-end-4;
 }
 
 .first_block,
 .second_block {
   p,
   ul {
-    @apply flex mr-[6px] mb-[10px];
+    @apply flex mr-[6px] mb-[10px] lg:flex-wrap;
   }
 }
 
 .first_block,
 .second_block,
 .third_block {
-  @apply h-full p-[14px] bg-white;
+  @apply p-[14px] bg-white;
 }
 
 .flag {
-  @apply h-56 bg-no-repeat bg-center bg-cover mt-[35px] mb-[40px];
+  @apply h-56 bg-no-repeat bg-center bg-cover mt-[35px] mb-[40px]  lg:m-[50px_auto];
 }
 
 .boundary_container {
-  @apply grid gap-2 mt-6;
-  grid-template-columns: repeat(2, minmax(152px, 100%));
+  @apply flex flex-wrap items-center gap-2 mt-6 lg:max-w-[520px];
   a {
-    @apply grid w-full;
+    @apply grid w-[168px];
   }
 }
 

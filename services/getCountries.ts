@@ -17,8 +17,6 @@ export class GetCountries {
   }
 
   async getCountriesByCode(country: string[]) {
-    console.log(country);
-
     const response =
         country &&
         (await fetch(

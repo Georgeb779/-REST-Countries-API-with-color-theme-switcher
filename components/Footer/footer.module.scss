@@ -1,0 +1,15 @@
+.container {
+  @apply flex flex-wrap text-primaryDark justify-center items-center;
+
+  a {
+    @apply text-blue-600 m-1;
+  }
+}
+
+:global(.dark) .container {
+  @apply text-white bg-primaryDark;
+
+  a {
+    @apply text-blue-200;
+  }
+}
