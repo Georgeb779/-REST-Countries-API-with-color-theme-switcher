@@ -1,8 +1,8 @@
 .container {
-  @apply flex flex-wrap text-primaryDark justify-center items-center;
+  @apply flex flex-wrap text-primaryDark justify-center items-end;
 
   a {
-    @apply text-blue-600 m-1;
+    @apply text-blue-600 ml-1 mr-1;
   }
 }
 

@@ -1,5 +1,5 @@
 .container {
-  @apply flex transition-all bg-white h-14 max-w-[375px] items-center m-6 p-4 shadow-sm rounded-md border-gray-200 border;
+  @apply flex transition-all bg-white h-14 max-w-[375px] items-center p-4 shadow-sm rounded-md border-gray-200 border;
 
   svg {
     @apply w-5 h-5 fill-primary mr-2;

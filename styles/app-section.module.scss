@@ -1,10 +1,9 @@
 .container {
-  @apply flex flex-col h-screen;
+  @apply flex flex-col h-screen justify-between;
 }
 
 .loading {
-  @apply grid h-full;
-  align-items: start;
+  @apply grid h-full items-center;
 }
 
 .loaded {

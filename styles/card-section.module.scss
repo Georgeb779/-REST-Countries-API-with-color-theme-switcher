@@ -3,7 +3,7 @@
 }
 
 .container {
-  @apply grid justify-items-center justify-center gap-8 h-full w-full;
+  @apply grid justify-items-center justify-center gap-4 lg:gap-8 h-full w-full;
   grid-template-columns: repeat(auto-fit, minmax(230px, 270px));
 
   a {
