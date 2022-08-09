@@ -9,11 +9,9 @@ export class GetCountries {
   }
 
   async getCountriesByName(name: string | string[]) {
-    const response = await fetch(
-        `https://restcountries.com/v3.1/name/${name}?fullText=true`
-      ),
+    const response = await fetch(`https://restcountries.com/v3.1/name/${name}`),
       data = await response.json();
-    return data;
+    return data.status === 404 ? this.getCountries() : data;
   }
 
   async getCountriesByCode(country: string[]) {
@@ -23,6 +21,14 @@ export class GetCountries {
           `https://restcountries.com/v3.1/alpha?codes=${country.join(",")}`
         )),
       data = country && (await response.json());
+    return data;
+  }
+
+  async getCountryByRegion(region: string) {
+    const response = await fetch(
+        `https://restcountries.com/v3.1/region/${region}`
+      ),
+      data = await response.json();
     return data;
   }
 }
