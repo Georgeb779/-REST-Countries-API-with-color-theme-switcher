@@ -14,15 +14,12 @@
 }
 
 .first_block {
-  @apply flex  lg:col-start-1 lg:row-start-2 lg:row-end-4;
-  max-width: 500px;
-  max-height: 388px;
+  @apply flex  lg:col-start-1 lg:row-start-2 lg:row-end-4 w-[375px] lg:w-[500px];
   margin: 0 auto;
 }
 .second_block {
   @apply lg:flex lg:justify-start lg:row-start-2;
 
-  // select second child div css of element .second_block
   div:nth-child(2) {
     @apply lg:flex lg:flex-col lg:justify-center lg:ml-5;
   }
