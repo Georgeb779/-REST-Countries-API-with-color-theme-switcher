@@ -3,7 +3,7 @@ import Link from "next/link";
 
 import styles from "./country-card.module.scss";
 
-export default function CountryCard({
+export  function CountryCard({
   name,
   population,
   region,

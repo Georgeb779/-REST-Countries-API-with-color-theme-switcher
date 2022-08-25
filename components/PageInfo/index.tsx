@@ -2,11 +2,11 @@ import Link from "next/link";
 import React, { useEffect, useState } from "react";
 import { GetCountries } from "../../services/getCountries";
 import { numberWithCommas } from "../../utils/numberWithCommas";
-import Button from "../Button";
+import { Button } from "../Button";
 import style from "./page-info.module.scss";
 import Back from "../../assets/back.svg";
 
-export default function PageInfo({
+export function PageInfo({
   name,
   flag,
   nativeLanguage,
@@ -44,7 +44,7 @@ export default function PageInfo({
   return (
     <div className={style.container}>
       <div className={style.first_block}>
-          <img src={flag} alt={name} />
+        <img src={flag} alt={name} />
       </div>
       <div className={style.second_block}>
         <div className={style.second_block_section_1}>

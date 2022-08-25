@@ -2,7 +2,7 @@ import React from "react";
 import { GetCountries } from "../../services/getCountries";
 import styles from "./search-bar.module.scss";
 
-export default function SearchBar({
+export function SearchBar({
   placeholder,
   icon,
   SetCountries,
@@ -22,14 +22,12 @@ export default function SearchBar({
     const country = new GetCountries();
 
     if (searchValue === "") {
-      country
-        .getCountries()
-        .then((res) => {
-          setTimeout(() => {
-            SetCountries(res);
-            setLoading(false);
-          }, 600);
-        })
+      country.getCountries().then((res) => {
+        setTimeout(() => {
+          SetCountries(res);
+          setLoading(false);
+        }, 600);
+      });
     } else {
       // wait for the user to stop typing
       setTimeout(() => {

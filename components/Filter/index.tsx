@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { GetCountries } from "../../services/getCountries";
 import styles from "./filter.module.scss";
 
-export default function Filter({
+export  function Filter({
   type,
   value,
   SetCountries,

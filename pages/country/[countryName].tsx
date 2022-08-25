@@ -1,12 +1,9 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
-import Button from "../../components/Button";
-import Footer from "../../components/Footer";
-import Header from "../../components/Header";
-import PageInfo from "../../components/PageInfo";
+import { Button, Footer, Header, PageInfo } from "../../components/";
 import { GetCountries } from "../../services/getCountries";
 import styles from "../../styles/info-page.module.scss";
-import Back from '../../assets/back.svg';
+import Back from "../../assets/back.svg";
 
 export async function getStaticPaths() {
   const country = new GetCountries();
@@ -52,7 +49,7 @@ export default function CountryDetail({ countryName }) {
     <div className={styles.container}>
       <Header />
       <div className={styles.main_info}>
-        <div className={styles.back} >
+        <div className={styles.back}>
           <Link href="/" passHref>
             <a>
               <Button
@@ -87,9 +84,8 @@ export default function CountryDetail({ countryName }) {
             />
           </>
         )}
-      <Footer />
+        <Footer />
       </div>
-
     </div>
   );
 }

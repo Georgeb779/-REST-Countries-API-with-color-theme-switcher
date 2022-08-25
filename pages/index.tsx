@@ -1,13 +1,17 @@
 import Head from "next/head";
 
-import { useEffect, useState, lazy, Suspense } from "react";
+import { useEffect, useState } from "react";
 
 import SearchIcon from "../assets/search.svg";
 
-import Header from "../components/Header";
-import SearchBar from "../components/SearchBar";
-import Filter from "../components/Filter";
-import CountryCard from "../components/CountryCard";
+import {
+  Header,
+  SearchBar,
+  Filter,
+  CountryCard,
+  Loading,
+  Footer,
+} from "../components/";
 
 import stylesFilter from "../styles/filter-section.module.scss";
 import stylesCard from "../styles/card-section.module.scss";
@@ -15,8 +19,6 @@ import styleApp from "../styles/app-section.module.scss";
 
 import { GetCountries } from "../services/getCountries";
 import { numberWithCommas } from "../utils/numberWithCommas";
-import Loading from "../components/Loading";
-import Footer from "../components/Footer";
 
 export default function Home() {
   const [countries, SetCountries] = useState([]);

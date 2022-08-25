@@ -1,7 +1,7 @@
 import React from "react";
 import styles from "./loading.module.scss";
 
-export default function Loading() {
+export  function Loading() {
   return (
     <div role="status" className={styles.container}>
       <svg

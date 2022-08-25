@@ -8,6 +8,9 @@
 .secondary {
   @apply flex min-w-[100px] justify-evenly bg-transparent rounded-[4px]  items-center text-primary gap-2 w-auto shadow-md p-2 border-gray-100 border-[0.5px];
 
+  &:hover {
+    @apply scale-105 transition-all duration-300 ease-in-out;
+  }
   svg {
     @apply w-5 h-5;
   }

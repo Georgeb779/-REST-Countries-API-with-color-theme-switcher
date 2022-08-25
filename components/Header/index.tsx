@@ -1,10 +1,10 @@
 import styles from "./header.module.scss";
 import Moon from "../../assets/moon-icon.svg";
-import Button from "../Button";
+import { Button } from "../Button";
 import { useState, useEffect } from "react";
 import { switchMode } from "../../utils/switchMode";
 
-export default function Header() {
+export function Header() {
   const [darkMode, setDarkMode] = useState({ value: false, iteration: 0 });
 
   useEffect(() => {

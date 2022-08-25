@@ -3,11 +3,15 @@
 }
 
 .main_info {
-  @apply flex h-full flex-col items-center  justify-between;
+  @apply flex h-full flex-col items-center  justify-between bg-white;
+}
+
+:global(.dark) .main_info {
+  @apply bg-primaryDark;
 }
 
 .back {
-  @apply flex place-self-start ;
+  @apply flex place-self-start;
   margin: 0 16px;
   height: 5rem;
 }
