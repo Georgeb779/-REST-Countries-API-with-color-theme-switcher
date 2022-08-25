@@ -57,7 +57,6 @@ export default function CountryDetail({ countryName }) {
                 type={"secondary"}
                 icon={<Back />}
                 onClick={() => {
-                  console.log("Back");
                 }}
               />
             </a>

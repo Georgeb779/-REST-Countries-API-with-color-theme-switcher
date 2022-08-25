@@ -23,22 +23,15 @@ export function SearchBar({
 
     if (searchValue === "") {
       country.getCountries().then((res) => {
-        setTimeout(() => {
-          SetCountries(res);
-          setLoading(false);
-        }, 600);
+        SetCountries(res);
+        setLoading(false);
       });
     } else {
-      // wait for the user to stop typing
-      setTimeout(() => {
-        setLoading(true);
-        country.getCountriesByName(searchValue).then((res) => {
-          setTimeout(() => {
-            SetCountries(res);
-            setLoading(false);
-          }, 600);
-        });
-      }, 1000);
+      setLoading(true);
+      country.getCountriesByName(searchValue).then((res) => {
+        SetCountries(res);
+        setLoading(false);
+      });
     }
   };
 

@@ -6,3 +6,4 @@ export * from "./Footer";
 export * from "./Loading";
 export * from "./PageInfo";
 export * from "./SearchBar";
+export * from "./NotFound";

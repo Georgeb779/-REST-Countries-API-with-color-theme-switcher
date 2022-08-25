@@ -11,6 +11,7 @@ import {
   CountryCard,
   Loading,
   Footer,
+  NotFound,
 } from "../components/";
 
 import stylesFilter from "../styles/filter-section.module.scss";
@@ -31,8 +32,6 @@ export default function Home() {
       setLoading(false);
     });
   }, []);
-
-  console.log(countries);
 
   return (
     <div className={styleApp.container}>
@@ -65,8 +64,9 @@ export default function Home() {
           <div className={stylesCard.container}>
             {loading ? (
               <Loading />
+            ) : countries === false ? (
+              <NotFound />
             ) : (
-              countries &&
               countries.map((country) => (
                 <CountryCard
                   key={country.name.common}
