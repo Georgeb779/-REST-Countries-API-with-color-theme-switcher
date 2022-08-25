@@ -1,6 +1,5 @@
-# Next.js TypeScript TailwindCSS & Sass Starter
+# REST Countries API with color theme switcher [Challenge](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca)
 
-Use TypeScript, TailwindCSS & Sass to quick start your new Next.js app!!
 
 ## 🧐 What's inside?
 
@@ -24,23 +23,13 @@ The rest of the Starter is based off of the Next.js default starter.
 
 ## 🚀 Getting Started
 
-Run the following command to create a new project with this Starter:
-
-```
-yarn create next-app my-app -e https://github.com/MikevPeeren/next-typescript-tailwindcss-sass-starter
-# or
-npx create-next-app my-app -e https://github.com/MikevPeeren/next-typescript-tailwindcss-sass-starter
-```
-
-Once the project and dependencies are finished installing, you can navigate to that directory and start up the development server with:
-
 ```
 yarn dev
 # or
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see your new project!
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the project!
 
 ## 📚 Learn More About Next.js
 
