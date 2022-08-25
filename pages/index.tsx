@@ -64,7 +64,7 @@ export default function Home() {
           <div className={stylesCard.container}>
             {loading ? (
               <Loading />
-            ) : countries === false ? (
+            ) : countries === false as any? (
               <NotFound />
             ) : (
               countries.map((country) => (
