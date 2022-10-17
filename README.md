@@ -1,5 +1,6 @@
-# REST Countries API with color theme switcher [Challenge](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca)
+# Frontend Mentor - REST Countries API with color theme switcher
 
+This is a solution to the [REST Countries API with color theme switcher challenge on Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca).This project was developed in React, it is a Frontend Mentor challenge, it allows searching and filtering countries through an API, this application has a dark and light mode.
 
 ## 🧐 What's inside?
 
@@ -15,27 +16,63 @@ This Starter includes
 - 🐶 [Husky](https://github.com/typicode/husky) - Husky improves your commits and more 🐶 woof!
 - 🐶 [Lint Staged](https://github.com/okonet/lint-staged) — Run linters against staged git files and don't let 💩 slip into your code base!
 
-The rest of the Starter is based off of the Next.js default starter.
-
-## ⚡️ Quick Start
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/project?template=https://github.com/MikevPeeren/next-typescript-tailwindcss-sass-starter)
+## Overview
 
 ## 🚀 Getting Started
 
 ```
+# Install dependencies
+
+npm install
+# or
+yarn install
+
+# Start development server
+
 yarn dev
 # or
 npm run dev
+
+# Build for production
+
+yarn build
+# or
+npm run build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the project!
+### The challenge
 
-## 📚 Learn More About Next.js
+Users should be able to:
 
-To learn more about Next.js, take a look at the following resources:
+- See all countries from the API on the homepage
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- Search for a country using an input field
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+- Filter countries by region
+
+- Click on a country to see more detailed information on a separate page
+
+- Click through to the border countries on the detail page
+
+- Toggle the color scheme between light and dark mode (optional)
+
+### Screenshot
+
+![Mobile view of solution](./screenshot/mobile.png)
+
+![Mobile active view of solution](./screenshot/mobile-active.png)
+
+![Desktop view of solution](./screenshot/desktop.png)
+
+![Desktop active view of solution](./screenshot/desktop-active.png)
+
+### Links
+
+- Solution URL: [Link to solution URL here](https://www.frontendmentor.io/solutions/rest-countries-api-with-color-theme-switcher-PEPrHnrjaL)
+- Live Site URL: [Link to live site](https://countries-api-test.netlify.app/)
+
+## Author
+
+- Frontend Mentor - [@Georgeb79](https://www.frontendmentor.io/profile/Georgeb779)
+- Linkedin - [@GeorgeBaez](https://www.linkedin.com/in/george-baez/)
+- Twitter - [@Georgeb779](https://twitter.com/Georgeb779)
